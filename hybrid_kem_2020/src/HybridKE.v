@@ -330,7 +330,7 @@ Section CtKDF.
       rewrite H3.
       symmetry.
       apply firstn_length_le.
-      omega.
+      lia.
 
       fcf_inline_first.
       fcf_skip.
@@ -343,7 +343,7 @@ Section CtKDF.
       rewrite H4.
       symmetry.
       apply firstn_length_le.
-      omega.
+      lia.
     
       rewrite snd_split_length.
       apply compMap_length in H2.
@@ -353,8 +353,8 @@ Section CtKDF.
       rewrite H2.
       rewrite firstn_length_le.
       rewrite skipn_length.
-      omega.
-      omega.
+      lia.
+      lia.
      
       fcf_inline_first.
       fcf_skip.
@@ -367,7 +367,7 @@ Section CtKDF.
       rewrite H5.
       symmetry.
       apply firstn_length_le.
-      omega.
+      lia.
 
       rewrite combine_length.
       rewrite min_l.
@@ -384,8 +384,8 @@ Section CtKDF.
       rewrite H2.
       rewrite firstn_length_le.
       rewrite skipn_length.
-      omega.
-      omega.
+      lia.
+      lia.
     Qed.
 
     (* reorder *) 
@@ -1119,7 +1119,7 @@ Section CtKDF.
     rewrite H3.
     symmetry.
     apply firstn_length_le.
-    omega.
+    lia.
 
     fcf_inline_first.
     fcf_skip.
@@ -1132,7 +1132,7 @@ Section CtKDF.
     rewrite H4.
     symmetry.
     apply firstn_length_le.
-    omega.
+    lia.
   
     rewrite snd_split_length.
     apply compMap_length in H2.
@@ -1142,8 +1142,8 @@ Section CtKDF.
     rewrite H2.
     rewrite firstn_length_le.
     rewrite skipn_length.
-    omega.
-    omega.
+    lia.
+    lia.
    
     fcf_inline_first.
     fcf_skip.
@@ -1156,7 +1156,7 @@ Section CtKDF.
     rewrite H5.
     symmetry.
     apply firstn_length_le.
-    omega.
+    lia.
 
     repeat rewrite snd_split_app.
     repeat rewrite fst_split_app.
@@ -1184,8 +1184,8 @@ Section CtKDF.
     rewrite H2.
     rewrite firstn_length_le.
     rewrite skipn_length.
-    omega.
-    omega.
+    lia.
+    lia.
   Qed.
 
   Theorem CtKDF_G6_equiv :  

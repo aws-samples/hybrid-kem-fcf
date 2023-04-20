@@ -146,7 +146,7 @@ Theorem beginsWith_app_true : forall (A : Set)(eqda : EqDec A)(ls1 ls2 ls3 : lis
   rewrite app_nil_r.
   rewrite H.
   apply eqb_leibniz. trivial.
-  omega.
+  lia.
 Qed.
 
 Theorem isSubListOf_nil_true : forall (A : Set)(eqda : EqDec A)(ls : list A),

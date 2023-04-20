@@ -1,4 +1,4 @@
--R ../FCF/src/FCF FCF
+-R ../../FCF/src/FCF FCF
 -R src HKE
 src/KeyExchange.v
 src/KeyExchange_ROM.v

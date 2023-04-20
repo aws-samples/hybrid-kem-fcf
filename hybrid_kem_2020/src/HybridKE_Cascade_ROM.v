@@ -77,7 +77,7 @@ Section RndList.
     subst.
     rewrite app_length.
     simpl.
-    omega.
+    lia.
 
   Qed.
 
@@ -944,18 +944,16 @@ Section CasKDF_ROM.
       induction n; destruct ls1; intuition; simpl in *.
       fcf_simp.
       eapply comp_spec_ret; intuition.
-      rewrite firstn_0.
-      econstructor.
 
-      omega.
-      omega.
+      lia.
+      lia.
       
       unfold rndHist.
       fcf_inline_first.
       fcf_skip.
       fcf_skip.
       eapply IHn.
-      omega.
+      lia.
       eapply comp_spec_ret; intuition.
       simpl in *.
       intuition.
@@ -990,11 +988,9 @@ Section CasKDF_ROM.
       induction n; destruct ls1; intuition; simpl in *.
       fcf_simp.
       eapply comp_spec_ret; intuition.
-      rewrite firstn_0.
-      econstructor.
 
-      omega.
-      omega.
+      lia.
+      lia.
       
       unfold rndHist.
       fcf_inline_first.
@@ -1243,7 +1239,7 @@ Section CasKDF_ROM.
       unfold CasKDF_IND_CPA_G1_bad2, CasKDF_IND_CPA_G1_bad3.
       fcf_skip.
       destruct (length KE).
-      omega.
+      lia.
       eapply rndList_tl_eq.
       (* wf *)
       eapply compMap_wf; intuition.
@@ -1469,7 +1465,7 @@ Section CasKDF_ROM.
       simpl.
       reflexivity.
       reflexivity.
-      omega.
+      lia.
 
       Unshelve.
       apply (oneVector 8).
@@ -1523,7 +1519,7 @@ Section CasKDF_ROM.
       rewrite <- evalDist_event_equiv.
       eapply IHn.
       intuition.
-      simpl in *. omega.
+      simpl in *. lia.
       intuition.
       simpl.
       match goal with
@@ -1609,7 +1605,7 @@ Section CasKDF_ROM.
       rewrite CasKDF_IND_CPA_G1_bad5a_small.
       rewrite CasKDF_IND_CPA_G1_bad5b_small.
       destruct (length KE).
-      omega.
+      lia.
       unfold pred.
       eapply leRat_trans.
       2:{
@@ -1858,7 +1854,7 @@ Section CasKDF_ROM.
       repeat simp_in_support.
       eapply IHps in H1.
       simpl.
-      omega.
+      lia.
 
     Qed.
 
@@ -1905,7 +1901,7 @@ Section CasKDF_ROM.
       rewrite firstn_firstn.
       reflexivity.
       trivial.
-      omega.
+      lia.
      
       fcf_inline_first.
       fcf_simp.
@@ -1948,9 +1944,9 @@ Section CasKDF_ROM.
       simpl. 
       rewrite firstn_length.
       rewrite min_l.
-      omega.
-      omega.
-      omega.
+      lia.
+      lia.
+      lia.
       f_equal.
       f_equal.
       f_equal.
@@ -1969,8 +1965,8 @@ Section CasKDF_ROM.
       simpl. 
       rewrite firstn_length.
       rewrite min_l.
-      omega.
-      omega.
+      lia.
+      lia.
 
       fcf_simp.
       fcf_inline_first.
@@ -1994,23 +1990,23 @@ Section CasKDF_ROM.
       rewrite firstn_length.
       rewrite min_l.
       erewrite stripOpt_length; eauto. 
-      omega.
+      lia.
       rewrite combine_length.
       repeat rewrite split_length_r.
       rewrite min_l.
       rewrite firstn_length.
       rewrite min_l.
-      omega.
-      omega.
+      lia.
+      lia.
       erewrite (@stripOpt_length _ _ l); eauto.
-      omega.
-      omega.
+      lia.
+      lia.
       rewrite firstn_length.
       rewrite min_l.
       rewrite split_length_r.
-      omega.
-      omega.
-      omega.
+      lia.
+      lia.
+      lia.
 
       rewrite combine_length.
       apply compMap_length in H1.
@@ -2027,17 +2023,17 @@ Section CasKDF_ROM.
       rewrite min_l.
       erewrite stripOpt_length; eauto.
       trivial.  
-      omega.
+      lia.
       repeat rewrite split_length_r.
       erewrite stripOpt_length; eauto.
-      omega.
-      omega.
+      lia.
+      lia.
       rewrite firstn_length.
       rewrite min_l.
       rewrite split_length_r.
-      omega.
-      omega.
-      omega.
+      lia.
+      lia.
+      lia.
     
       apply compMap_length in H1.
       rewrite firstn_length in H1.
@@ -2049,15 +2045,15 @@ Section CasKDF_ROM.
       rewrite min_l in H3.
       repeat rewrite split_length_r.
       erewrite (@stripOpt_length _ _ l); eauto. 
-      omega.
-      omega.
+      lia.
+      lia.
       rewrite firstn_length.
       rewrite min_l.
       rewrite split_length_r.
-      omega.
-      omega.
-      omega.
-      omega.
+      lia.
+      lia.
+      lia.
+      lia.
 
       simpl.
       reflexivity.
@@ -3006,10 +3002,10 @@ Section CasKDF_ROM.
       destruct ls; simpl in *.
       trivial.
       eapply skipn_ge_nil.
-      omega.
+      lia.
       destruct ls; simpl in *.
       intuition idtac.
-      omega.
+      lia.
 
       destruct H.
       destruct H.
@@ -4515,11 +4511,10 @@ Section CasKDF_ROM.
       induction n; destruct ls1; intuition; simpl in *.
       fcf_simp.
       eapply comp_spec_ret; intuition.
-      rewrite firstn_0.
-      econstructor.
 
-      omega.
-      omega.
+
+      lia.
+      lia.
       
       unfold rndHist.
       fcf_inline_first.
@@ -4533,7 +4528,7 @@ Section CasKDF_ROM.
       fcf_inline_first; fcf_skip; fcf_simp.
       fcf_inline_first; fcf_skip; fcf_simp.
       eapply IHn.
-      omega.
+      lia.
 
       simpl in *; intuition; subst.
       eapply comp_spec_ret; intuition.
@@ -4697,23 +4692,23 @@ Section CasKDF_ROM.
       rewrite min_l.
       rewrite split_length_r.
       apply stripOpt_length in H13.
-      omega.
+      lia.
       repeat rewrite split_length_r.
       apply stripOpt_length in H13.
-      omega.
+      lia.
       rewrite combine_length.
       rewrite min_l.
       rewrite split_length_r.
       rewrite skipn_length.
       apply stripOpt_length in H13.
-      omega.
+      lia.
       rewrite split_length_r.
       rewrite split_length_r.
       apply stripOpt_length in H13.
-      omega.
+      lia.
       rewrite skipn_length.
       rewrite split_length_r.
-      omega.
+      lia.
 
       simpl in *. intuition. subst.
       fcf_inline_first; fcf_skip; fcf_simp.
@@ -5006,7 +5001,7 @@ Section CasKDF_ROM.
       eapply compMap_unroll_tl.
       rewrite forNats_length.
       assert (length KE - strongKE = S (length KE - S (strongKE))).
-      omega.
+      lia.
       eauto.
       }
       fcf_swap leftc.
@@ -5018,7 +5013,7 @@ Section CasKDF_ROM.
       rewrite min_l.
       trivial.
       rewrite forNats_length.
-      omega.
+      lia.
       intros.
       eapply comp_spec_eq_refl.
       fcf_skip.
@@ -5240,7 +5235,7 @@ Section CasKDF_ROM.
       destruct x7; simpl in *.
       erewrite qam_state_length; eauto.
       simpl.
-      omega.
+      lia.
       intuition.
       unfold nestedRandomFunc in *.
       match goal with
@@ -5250,7 +5245,7 @@ Section CasKDF_ROM.
       rewrite H16 in H15.
       repeat simp_in_support.
       simpl.
-      omega.
+      lia.
       unfold randomFunc in *.
       match goal with
       | [H: context[match ?a with | Some _ => _ | None => _ end ] |- _ ] =>
@@ -5259,12 +5254,12 @@ Section CasKDF_ROM.
       rewrite H17 in H15;
       repeat simp_in_support;
       simpl;
-      omega.
-      omega.
+      lia.
+      lia.
 
       repeat rewrite posnatMult_eq.
       simpl.
-      omega.
+      lia.
 
       eapply rndOctetString_wf.
 
