@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "Please cite as shown below."
+authors:
+  - family-names: Petcher
+    given-names: Adam
+title: "Hybrid KEM Proofs in FCF"
+version: 1.1.0
+date-released: 2023-04-20
